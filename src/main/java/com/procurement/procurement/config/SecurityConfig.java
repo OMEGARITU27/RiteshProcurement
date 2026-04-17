@@ -38,6 +38,16 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
 
                         // ✅ Completely public — no token needed
+                        .requestMatchers(
+                                "/",
+                                "/index.html",
+                                "/app.js",
+                                "/styles.css",
+                                "/favicon.ico",
+                                "/error",
+                                "/webjars/**",
+                                "/static/**"
+                        ).permitAll()
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/vendor-auth/**").permitAll()
 

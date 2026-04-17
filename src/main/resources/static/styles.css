@@ -1,0 +1,38 @@
+body {
+  background: #f6f8fb;
+}
+
+.card {
+  border-radius: 0.75rem;
+}
+
+#tabContent .card {
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.code-pill {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8rem;
+  background: #eef2ff;
+  color: #3730a3;
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+.hidden {
+  display: none !important;
+}
