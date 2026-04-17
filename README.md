@@ -1,4 +1,5 @@
-# RiteshProcurement
+RiteshProcurement
+Smart Procurement and Vendor Management System built with Spring Boot, MySQL, JWT security, and a role-aware web frontend.
 
 Smart Procurement and Vendor Management System built with Spring Boot, MySQL, JWT security, and a role-aware web frontend.
 
@@ -70,7 +71,8 @@ The frontend is included in:
 
 Once the backend runs, open:
 
-- `http://localhost:8080/`
+Project Architecture
+The codebase follows a layered architecture:
 
 Frontend features include:
 
