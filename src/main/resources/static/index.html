@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ritesh Procurement Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container-fluid py-3">
+    <header class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+      <div>
+        <h1 class="h3 mb-1">Ritesh Procurement Portal</h1>
+        <small class="text-body-secondary">End-to-end procurement frontend</small>
+      </div>
+      <div class="d-flex gap-2 align-items-center">
+        <span id="sessionBadge" class="badge text-bg-secondary">Not logged in</span>
+        <button id="logoutBtn" class="btn btn-outline-danger btn-sm d-none">Logout</button>
+      </div>
+    </header>
+
+    <section class="card shadow-sm mb-4" id="authCard">
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-lg-6">
+            <h2 class="h5">User Login</h2>
+            <form id="userLoginForm" class="row g-2">
+              <div class="col-md-6"><input class="form-control" name="username" placeholder="Username" required /></div>
+              <div class="col-md-6"><input type="password" class="form-control" name="password" placeholder="Password" required /></div>
+              <div class="col-12"><button class="btn btn-primary" type="submit">Login as User</button></div>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <h2 class="h5">Vendor Login</h2>
+            <form id="vendorLoginForm" class="row g-2">
+              <div class="col-md-6"><input type="email" class="form-control" name="email" placeholder="Vendor Email" required /></div>
+              <div class="col-md-6"><input type="password" class="form-control" name="password" placeholder="Password" required /></div>
+              <div class="col-12"><button class="btn btn-success" type="submit">Login as Vendor</button></div>
+            </form>
+          </div>
+        </div>
+        <hr />
+        <div class="row g-3">
+          <div class="col-lg-6">
+            <h2 class="h6">Register User</h2>
+            <form id="userRegisterForm" class="row g-2">
+              <div class="col-md-6"><input class="form-control" name="username" placeholder="Username" required /></div>
+              <div class="col-md-6"><input class="form-control" name="fullName" placeholder="Full name" /></div>
+              <div class="col-md-6"><input type="email" class="form-control" name="email" placeholder="Email" /></div>
+              <div class="col-md-6">
+                <select class="form-select" name="role">
+                  <option value="ROLE_EMPLOYEE">ROLE_EMPLOYEE</option>
+                  <option value="ROLE_PROCUREMENT_MANAGER">ROLE_PROCUREMENT_MANAGER</option>
+                </select>
+              </div>
+              <div class="col-md-6"><input type="password" class="form-control" name="password" placeholder="Password" required /></div>
+              <div class="col-12"><button class="btn btn-outline-primary" type="submit">Register User</button></div>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <h2 class="h6">Register Vendor</h2>
+            <form id="vendorRegisterForm" class="row g-2">
+              <div class="col-md-6"><input class="form-control" name="companyName" placeholder="Company name" required /></div>
+              <div class="col-md-6"><input type="email" class="form-control" name="email" placeholder="Email" required /></div>
+              <div class="col-md-6"><input class="form-control" name="gstNumber" placeholder="GST number" /></div>
+              <div class="col-md-6"><input class="form-control" name="contactNumber" placeholder="Contact number" /></div>
+              <div class="col-12"><input class="form-control" name="address" placeholder="Address" /></div>
+              <div class="col-md-6"><input type="password" class="form-control" name="password" placeholder="Password" required /></div>
+              <div class="col-12"><button class="btn btn-outline-success" type="submit">Register Vendor</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="statusAlert" class="alert d-none" role="alert"></div>
+
+    <section id="appSection" class="d-none">
+      <ul class="nav nav-tabs mb-3" id="mainTabs">
+        <li class="nav-item"><button class="nav-link active" data-tab="dashboard">Dashboard</button></li>
+        <li class="nav-item"><button class="nav-link" data-tab="vendors">Vendors</button></li>
+        <li class="nav-item"><button class="nav-link" data-tab="requisitions">Requisitions</button></li>
+        <li class="nav-item"><button class="nav-link" data-tab="purchaseOrders">Purchase Orders</button></li>
+        <li class="nav-item"><button class="nav-link" data-tab="approvals">Approvals</button></li>
+        <li class="nav-item"><button class="nav-link" data-tab="vendorPortal">Vendor Portal</button></li>
+        <li class="nav-item"><button class="nav-link" data-tab="admin">Admin</button></li>
+        <li class="nav-item"><button class="nav-link" data-tab="reports">Reports</button></li>
+      </ul>
+
+      <div id="tabContent"></div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
